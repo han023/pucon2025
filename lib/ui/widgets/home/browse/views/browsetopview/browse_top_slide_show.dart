@@ -8,9 +8,9 @@ import 'package:pucon2025/ui/common/customwidget/button_helper.dart';
 import 'package:pucon2025/ui/common/customwidget/text_helper.dart';
 
 final List<String> imgList = [
-  'assets/login.png',
-  'assets/login.png',
-  'assets/login.png',
+  'assets/c1.jpg',
+  'assets/c2.jpg',
+  'assets/c3.jpg',
 ];
 
 Widget BrowseTopSlideShow(BuildContext context) {

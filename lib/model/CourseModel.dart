@@ -1,59 +1,51 @@
-class Course {
-  final String uid;
-  final String authorId;
-  final String courseName;
-  final String totalLessons;
-  final String courseDuration;
-  final String rating;
+class CourseModel {
+  final String title;
   final String description;
-  final String skills; // JSON string
-  final String reviews; // JSON string
-  final String categoryName;
-  final String categoryImage;
+  final String courseImage;
+  final String authorId;
+  final String price;
+  final String rating;
+  final String totalStudents;
+  final String category;
+  final String durationHours;
 
-  Course({
-    required this.uid,
-    required this.authorId,
-    required this.courseName,
-    required this.totalLessons,
-    required this.courseDuration,
-    required this.rating,
+  CourseModel({
+    required this.title,
     required this.description,
-    required this.skills,
-    required this.reviews,
-    required this.categoryName,
-    required this.categoryImage,
+    required this.courseImage,
+    required this.authorId,
+    required this.price,
+    required this.rating,
+    required this.totalStudents,
+    required this.category,
+    required this.durationHours,
   });
 
-  factory Course.fromMap(Map<String, dynamic> map) {
-    return Course(
-      uid: map['uid'] ?? '',
-      authorId: map['authorId'] ?? '',
-      courseName: map['courseName'] ?? '',
-      totalLessons: map['totalLessons'] ?? '',
-      courseDuration: map['courseDuration'] ?? '',
-      rating: map['rating'] ?? '',
+  factory CourseModel.fromMap(Map<String, dynamic> map) {
+    return CourseModel(
+      title: map['title'] ?? '',
       description: map['description'] ?? '',
-      skills: map['skills'] ?? '',
-      reviews: map['reviews'] ?? '',
-      categoryName: map['categoryName'] ?? '',
-      categoryImage: map['categoryImage'] ?? '',
+      courseImage: map['courseImage'] ?? '',
+      authorId: map['authorId'] ?? '',
+      price: map['price'] ?? '0',
+      rating: map['rating'] ?? '0',
+      totalStudents: map['totalStudents'] ?? '0',
+      category: map['category'] ?? '',
+      durationHours: map['durationHours'] ?? '0',
     );
   }
 
-  Map<String, String> toMap() {
+  Map<String, dynamic> toMap() {
     return {
-      'uid': uid,
-      'authorId': authorId,
-      'courseName': courseName,
-      'totalLessons': totalLessons,
-      'courseDuration': courseDuration,
-      'rating': rating,
+      'title': title,
       'description': description,
-      'skills': skills,
-      'reviews': reviews,
-      'categoryName': categoryName,
-      'categoryImage': categoryImage,
+      'courseImage': courseImage,
+      'authorId': authorId,
+      'price': price,
+      'rating': rating,
+      'totalStudents': totalStudents,
+      'category': category,
+      'durationHours': durationHours,
     };
   }
 }

@@ -1,9 +1,12 @@
+import 'package:pucon2025/services/database/notification_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:pucon2025/model/NotificationModel.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../../../../app/app.locator.dart';
 
 class NotificationsModel extends BaseViewModel {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final _notification = locator<NotificationService>();
+
   List<NotificationModel> _notifications = [];
 
   List<NotificationModel> get notifications => _notifications;
@@ -11,8 +14,7 @@ class NotificationsModel extends BaseViewModel {
   Future<void> fetchNotifications() async {
     setBusy(true);
     try {
-      final snapshot = await _firestore
-          .collection('notifications')
+      final snapshot = await _notification.firestore
           .orderBy('timestamp', descending: true)
           .get();
 
@@ -28,9 +30,6 @@ class NotificationsModel extends BaseViewModel {
   }
 
   Future<void> markAsRead(String notificationId) async {
-    await _firestore
-        .collection('notifications')
-        .doc(notificationId)
-        .update({'read': true});
+    await _notification.markAsRead(notificationId);
   }
 }

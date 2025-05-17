@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:pucon2025/ui/common/constants/app_strings.dart';
 import 'package:stacked/stacked.dart';
-import 'package:pucon2025/model/NotificationModel.dart';
 import 'package:pucon2025/ui/common/constants/app_colors.dart';
 import 'package:pucon2025/ui/common/constants/ui_helpers.dart';
 import 'package:pucon2025/ui/common/customwidget/text_helper.dart';
@@ -13,111 +13,142 @@ class Notifications extends StackedView<NotificationsModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      NotificationsModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    NotificationsModel viewModel,
+    Widget? child,
+  ) {
     return Scaffold(
-      backgroundColor: white,
       appBar: AppBar(
-        backgroundColor: white,
-        elevation: 0,
-        centerTitle: true,
-        title: text_helper(
-          data: 'Notifications',
-          fontWeight: FontWeight.bold,
-          size: fontSize16,
-          color: black,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                verticalSpaceSmall,
+                const Icon(
+                  Icons.filter_alt,
+                  size: 20,
+                ),
+                verticalSpaceTiny,
+                text_helper(
+                  data: "Notifications",
+                  font: sourceserif,
+                  fontWeight: FontWeight.bold,
+                  size: fontSize22,
+                )
+              ],
+            ),
+            const Row(
+              children: [
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                ),
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                ),
+                Icon(
+                  Icons.circle,
+                  size: 10,
+                ),
+              ],
+            )
+          ],
         ),
       ),
       body: viewModel.isBusy
           ? const Center(child: CircularProgressIndicator())
           : viewModel.notifications.isEmpty
-          ? Center(
-        child: text_helper(
-          data: 'No notifications yet',
-          color: darkGrey,
-          size: fontSize14,
-        ),
-      )
-          : ListView.separated(
-        padding: const EdgeInsets.symmetric(
-            horizontal: padding16, vertical: padding10),
-        itemCount: viewModel.notifications.length,
-        separatorBuilder: (_, __) => const Divider(color: grey),
-        itemBuilder: (context, index) {
-          final notification = viewModel.notifications[index];
-
-          return Container(
-            padding: const EdgeInsets.all(padding12),
-            decoration: BoxDecoration(
-              color: notification.isRead ? white : Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: grey.withOpacity(0.1),
-                  blurRadius: 5,
-                  offset: const Offset(0, 2),
+              ? Center(
+                  child: text_helper(
+                    data: 'No notifications yet',
+                    color: darkGrey,
+                    size: fontSize14,
+                  ),
                 )
-              ],
-            ),
-            child: InkWell(
-              onTap: () {
-                viewModel.markAsRead(notification.id);
+              : ListView.separated(
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: padding16, vertical: padding10),
+                  itemCount: viewModel.notifications.length,
+                  separatorBuilder: (_, __) => const Divider(color: grey),
+                  itemBuilder: (context, index) {
+                    final notification = viewModel.notifications[index];
 
-              },
-              child: Row(
-                children: [
-                  // Notification image
-                  CircleAvatar(
-                    radius: 24,
-                    backgroundImage: NetworkImage(notification.image),
-                    backgroundColor: grey.withOpacity(0.2),
-                  ),
-                  horizontalSpaceMedium,
+                    return Container(
+                      padding: const EdgeInsets.all(padding12),
+                      decoration: BoxDecoration(
+                        color: notification.isRead ? white : Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: grey.withOpacity(0.1),
+                            blurRadius: 5,
+                            offset: const Offset(0, 2),
+                          )
+                        ],
+                      ),
+                      child: InkWell(
+                        onTap: () {
+                          viewModel.markAsRead(notification.id);
+                        },
+                        child: Row(
+                          children: [
+                            CircleAvatar(
+                              radius: 24,
+                              backgroundImage: NetworkImage(notification.image),
+                              backgroundColor: grey.withOpacity(0.2),
+                            ),
+                            horizontalSpaceMedium,
 
-                  // Notification content
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        text_helper(
-                          data: notification.title,
-                          fontWeight: FontWeight.bold,
-                          size: fontSize14,
-                          color: black,
-                        ),
-                        verticalSpaceTiny,
-                        text_helper(
-                          data: notification.body,
-                          color: darkGrey,
-                          size: fontSize12,
-                        ),
-                        verticalSpaceTiny,
-                        text_helper(
-                          data: timeAgo(notification.timestamp),
-                          color: grey,
-                          size: fontSize10,
-                        ),
-                      ],
-                    ),
-                  ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  text_helper(
+                                    data: notification.title,
+                                    fontWeight: FontWeight.bold,
+                                    size: fontSize14,
+                                    color: black,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  verticalSpaceTiny,
+                                  text_helper(
+                                    data: notification.body,
+                                    color: darkGrey,
+                                    size: fontSize12,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  verticalSpaceTiny,
+                                  text_helper(
+                                    data: timeAgo(notification.timestamp),
+                                    color: grey,
+                                    size: fontSize10,
+                                  ),
+                                ],
+                              ),
+                            ),
 
-                  // Action button
-                  if (notification.authorId.isNotEmpty)
-                    IconButton(
-                      icon: const Icon(Icons.person_add_alt_1),
-                      color: primary,
-                      onPressed: () {
-                        // Handle follow author action
-                      },
-                    ),
-                ],
-              ),
-            ),
-          ).animate(delay: (index * 200).ms).fade().moveY(begin: 50, end: 0);
-        },
-      ),
+                            // Action button
+                            if (notification.authorId.isNotEmpty)
+                              IconButton(
+                                icon: const Icon(Icons.person_add_alt_1),
+                                color: primary,
+                                onPressed: () {
+                                  // Handle follow author action
+                                },
+                              ),
+                          ],
+                        ),
+                      ),
+                    )
+                        .animate(delay: (index * 200).ms)
+                        .fade()
+                        .moveY(begin: 50, end: 0);
+                  },
+                ),
     );
   }
 
@@ -128,7 +159,8 @@ class Notifications extends StackedView<NotificationsModel> {
   }
 
   @override
-  NotificationsModel viewModelBuilder(BuildContext context) => NotificationsModel();
+  NotificationsModel viewModelBuilder(BuildContext context) =>
+      NotificationsModel();
 }
 
 String timeAgo(DateTime date) {

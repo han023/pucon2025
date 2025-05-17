@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pucon2025/ui/common/constants/ui_helpers.dart';
 import 'package:pucon2025/ui/widgets/home/browse/views/author.dart';
 import 'package:pucon2025/ui/widgets/home/browse/views/browse_top.dart';
+import 'package:pucon2025/ui/widgets/home/browse/views/pouplar_skills.dart';
 import 'package:pucon2025/ui/widgets/home/browse/views/recommended_course.dart';
 import 'package:stacked/stacked.dart';
 
@@ -16,7 +17,7 @@ class Browse extends StackedView<BrowseModel> {
     BrowseModel viewModel,
     Widget? child,
   ) {
-    return Column(
+    return ListView(
       children: [
         browseTop(context, viewModel),
         Padding(
@@ -26,6 +27,9 @@ class Browse extends StackedView<BrowseModel> {
               author(context, viewModel),
               verticalSpaceMedium,
               RecommendedCourse(context, viewModel),
+              verticalSpaceMedium,
+              popularSkills(context, viewModel),
+              verticalSpaceMedium,
             ],
           ),
         ),
