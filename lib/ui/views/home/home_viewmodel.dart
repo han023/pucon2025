@@ -20,11 +20,11 @@ class HomeViewModel extends BaseViewModel {
 
   List<BottomNavigationBarItem> bttomBarItemList = const [
     BottomNavigationBarItem(
-      icon: Icon(Icons.public),
+      icon: Icon(Icons.search),
       label: 'Browser',
     ),
     BottomNavigationBarItem(
-      icon: Icon(Icons.school),
+      icon: Icon(Icons.article_outlined),
       label: 'My Course',
     ),
     BottomNavigationBarItem(
