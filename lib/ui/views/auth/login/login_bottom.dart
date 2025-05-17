@@ -8,7 +8,7 @@ import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/ui_helpers.dart';
 import '../../../common/customwidget/text_helper.dart';
 
-Widget loginBottom(BuildContext context, LoginViewModel viewModel){
+Widget loginBottom(BuildContext context, LoginViewModel viewModel) {
   return Column(
     children: [
       InkWell(

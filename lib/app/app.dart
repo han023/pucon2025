@@ -12,6 +12,8 @@ import 'package:pucon2025/ui/views/auth/login/login_view.dart';
 import 'package:pucon2025/ui/views/auth/signup/signup_view.dart';
 import 'package:pucon2025/ui/views/auth/forgetpass/forgetpass_view.dart';
 import 'package:pucon2025/ui/views/home/home_view.dart';
+import 'package:pucon2025/services/database/author_service.dart';
+import 'package:pucon2025/services/database/course_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -32,6 +34,8 @@ import 'package:pucon2025/ui/views/home/home_view.dart';
     LazySingleton(classType: CloudinaryService),
     LazySingleton(classType: AuthService),
     LazySingleton(classType: UserService),
+    LazySingleton(classType: AuthorService),
+    LazySingleton(classType: CourseService),
 // @stacked-service
   ],
   bottomsheets: [

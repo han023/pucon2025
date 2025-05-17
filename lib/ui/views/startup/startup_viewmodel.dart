@@ -18,8 +18,7 @@ class StartupViewModel extends BaseViewModel {
     if (_sharedpref.readString(auth) == "true") {
       _navigationService.clearStackAndShow(Routes.homeView);
       _navigationService.replaceWithTransition(const HomeView(),
-          routeName: Routes.homeView,
-          transitionStyle: Transition.rightToLeft);
+          routeName: Routes.homeView, transitionStyle: Transition.rightToLeft);
     } else {
       _navigationService.replaceWithTransition(const LoginView(),
           routeName: Routes.loginView, transitionStyle: Transition.rightToLeft);

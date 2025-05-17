@@ -7,6 +7,8 @@ import 'package:pucon2025/services/fcmnoification_service.dart';
 import 'package:pucon2025/services/cloudinary_service.dart';
 import 'package:pucon2025/services/auth_service.dart';
 import 'package:pucon2025/services/database/user_service.dart';
+import 'package:pucon2025/services/database/author_service.dart';
+import 'package:pucon2025/services/database/course_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -21,6 +23,8 @@ import 'test_helpers.mocks.dart';
   MockSpec<GeminiService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<AuthService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<UserService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<AuthorService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<CourseService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -33,6 +37,8 @@ void registerServices() {
   getAndRegisterGeminiService();
   getAndRegisterAuthService();
   getAndRegisterUserService();
+  getAndRegisterAuthorService();
+  getAndRegisterCourseService();
 // @stacked-mock-register
 }
 
@@ -107,8 +113,6 @@ MockCloudinaryService getAndRegisterCloudinaryService() {
   return service;
 }
 
-
-
 MockAuthService getAndRegisterAuthService() {
   _removeRegistrationIfExists<AuthService>();
   final service = MockAuthService();
@@ -120,6 +124,20 @@ MockUserService getAndRegisterUserService() {
   _removeRegistrationIfExists<UserService>();
   final service = MockUserService();
   locator.registerSingleton<UserService>(service);
+  return service;
+}
+
+MockAuthorService getAndRegisterAuthorService() {
+  _removeRegistrationIfExists<AuthorService>();
+  final service = MockAuthorService();
+  locator.registerSingleton<AuthorService>(service);
+  return service;
+}
+
+MockCourseService getAndRegisterCourseService() {
+  _removeRegistrationIfExists<CourseService>();
+  final service = MockCourseService();
+  locator.registerSingleton<CourseService>(service);
   return service;
 }
 // @stacked-mock-create

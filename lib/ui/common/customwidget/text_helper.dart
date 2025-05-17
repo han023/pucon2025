@@ -45,7 +45,7 @@ class text_helper extends StatelessWidget {
       TextDecoration? textDecoration) {
     if (font == sourceserif) {
       return TextStyle(
-        fontFamily: "SourceSerifPro",
+          fontFamily: "SourceSerifPro",
           color: color,
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
@@ -56,7 +56,7 @@ class text_helper extends StatelessWidget {
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
           fontWeight: fontWeight);
-    }  else {
+    } else {
       return GoogleFonts.roboto(
           color: color,
           decoration: textDecoration,

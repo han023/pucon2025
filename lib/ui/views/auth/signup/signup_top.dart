@@ -5,7 +5,7 @@ import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/ui_helpers.dart';
 import '../../../common/customwidget/text_helper.dart';
 
-Widget signupTop(BuildContext context){
+Widget signupTop(BuildContext context) {
   return Stack(
     children: [
       Image.asset(
@@ -29,7 +29,6 @@ Widget signupTop(BuildContext context){
           padding: const EdgeInsets.all(25),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-
             children: [
               text_helper(
                 data: "Welcome User",

@@ -13,6 +13,8 @@ import 'package:stacked_shared/stacked_shared.dart';
 
 import '../services/auth_service.dart';
 import '../services/cloudinary_service.dart';
+import '../services/database/author_service.dart';
+import '../services/database/course_service.dart';
 import '../services/database/user_service.dart';
 import '../services/fcmnoification_service.dart';
 import '../services/localstorage_service.dart';
@@ -36,4 +38,6 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => CloudinaryService());
   locator.registerLazySingleton(() => AuthService());
   locator.registerLazySingleton(() => UserService());
+  locator.registerLazySingleton(() => AuthorService());
+  locator.registerLazySingleton(() => CourseService());
 }

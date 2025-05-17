@@ -11,7 +11,7 @@ import '../../../common/customwidget/text_helper.dart';
 import '../../../common/customwidget/text_view_helper.dart';
 import 'login_other_auth_buttons.dart';
 
-Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
+Widget loginMiddel(BuildContext context, LoginViewModel viewModel) {
   return Expanded(
     child: Padding(
       padding: const EdgeInsets.all(padding10),
@@ -29,8 +29,7 @@ Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
             maxline: 1,
             suffix: InkWell(
               onTap: () => viewModel.toggle(),
-              child: Icon(
-                  viewModel.obsure ? Iconsax.eye_slash : Iconsax.eye),
+              child: Icon(viewModel.obsure ? Iconsax.eye_slash : Iconsax.eye),
             ),
             prefix: const Icon(Icons.lock),
           ).animate(delay: 900.ms).fade().moveY(begin: 100, end: 0),
@@ -56,10 +55,7 @@ Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
                 data: "Sign In",
                 fontWeight: FontWeight.bold,
                 color: white,
-              ))
-              .animate(delay: 1300.ms)
-              .fade()
-              .moveY(begin: 100, end: 0),
+              )).animate(delay: 1300.ms).fade().moveY(begin: 100, end: 0),
           verticalSpaceSmall,
           text_helper(
             data: "or connect",
@@ -67,7 +63,10 @@ Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
             font: sourceserif,
           ).animate(delay: 1500.ms).fade().moveY(begin: 100, end: 0),
           verticalSpaceSmall,
-          loginOtherAuthButtons().animate(delay: 1700.ms).fade().moveY(begin: 100, end: 0)
+          loginOtherAuthButtons()
+              .animate(delay: 1700.ms)
+              .fade()
+              .moveY(begin: 100, end: 0)
         ],
       ),
     ),

@@ -36,9 +36,7 @@ class SignupViewModel extends BaseViewModel {
     final passwordText = password.text;
     final nameText = name.text.trim();
 
-    if (emailText.isEmpty ||
-        passwordText.isEmpty ||
-        nameText.isEmpty) {
+    if (emailText.isEmpty || passwordText.isEmpty || nameText.isEmpty) {
       show_snackbar(context, "Fill All Fields");
       return;
     }

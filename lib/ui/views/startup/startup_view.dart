@@ -22,7 +22,10 @@ class StartupView extends StackedView<StartupViewModel> {
         backgroundColor: primary,
         body: SafeArea(
             child: Center(
-          child: SvgPicture.asset("assets/splash.svg").animate(delay: 1000.ms).fadeIn().moveY(begin: 50, end: 0),
+          child: SvgPicture.asset("assets/splash.svg")
+              .animate(delay: 1000.ms)
+              .fadeIn()
+              .moveY(begin: 50, end: 0),
         )));
   }
 

@@ -26,7 +26,6 @@ Widget LoginTop(BuildContext context) {
           ),
         ),
       ),
-
       Positioned(
         bottom: 0,
         left: 25,

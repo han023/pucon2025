@@ -9,7 +9,7 @@ import '../../../common/constants/app_colors.dart';
 import '../../../common/constants/ui_helpers.dart';
 import '../../../common/customwidget/text_helper.dart';
 
-Widget signupBottom(BuildContext context, SignupViewModel viewModel){
+Widget signupBottom(BuildContext context, SignupViewModel viewModel) {
   return Column(
     children: [
       InkWell(
