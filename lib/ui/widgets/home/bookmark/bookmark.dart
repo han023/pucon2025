@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:pucon2025/ui/common/constants/app_colors.dart';
 import 'package:pucon2025/ui/common/constants/app_strings.dart';
 import 'package:pucon2025/ui/common/constants/ui_helpers.dart';
@@ -28,17 +29,42 @@ class Bookmark extends StackedView<BookmarkModel> {
             fontWeight: FontWeight.bold,
             size: fontSize20,
           ),
-          verticalSpaceSmall,
+          verticalSpaceMedium,
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-
+              Row(
+                children: [
+                  const Icon(Iconsax.sort),
+                  text_helper(
+                    data: "Sort",
+                    font: sourceserif,
+                  )
+                ],
+              ),
+              Container(
+                height: 20,
+                width: 2,
+                color: softGrey,
+              ),
+              Row(
+                children: [
+                  const Icon(Iconsax.filter),
+                  text_helper(
+                    data: "Filter",
+                    font: sourceserif,
+                  )
+                ],
+              ),
             ],
           ),
+          verticalSpaceSmall,
           Container(
             width: screenWidth(context),
             height: 2,
             color: softGrey,
           ),
+          verticalSpaceMedium,
 
         ],
       ),
