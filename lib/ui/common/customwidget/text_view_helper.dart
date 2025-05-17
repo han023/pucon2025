@@ -13,7 +13,7 @@ class text_view_helper extends StatelessWidget {
       required this.hint,
       required this.controller,
       this.textstyle = sourceserif,
-      this.hintcol = grey,
+      this.hintcol = darkerGrey,
       this.textcolor,
       this.size = fontSize14,
       this.fontWeight = FontWeight.w500,

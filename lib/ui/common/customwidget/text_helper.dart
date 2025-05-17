@@ -44,7 +44,8 @@ class text_helper extends StatelessWidget {
       FontWeight fontWeight,
       TextDecoration? textDecoration) {
     if (font == sourceserif) {
-      return GoogleFonts.sourceSerif4(
+      return TextStyle(
+        fontFamily: "SourceSerifPro",
           color: color,
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,

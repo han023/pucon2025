@@ -14,7 +14,7 @@ import 'login_other_auth_buttons.dart';
 Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
   return Expanded(
     child: Padding(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(padding10),
       child: ListView(
         children: [
           text_view_helper(
@@ -64,6 +64,7 @@ Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
           text_helper(
             data: "or connect",
             color: darkGrey,
+            font: sourceserif,
           ).animate(delay: 1500.ms).fade().moveY(begin: 100, end: 0),
           verticalSpaceSmall,
           loginOtherAuthButtons().animate(delay: 1700.ms).fade().moveY(begin: 100, end: 0)
