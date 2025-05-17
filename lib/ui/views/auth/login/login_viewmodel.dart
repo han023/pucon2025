@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:pucon2025/ui/views/auth/forgetpass/forgetpass_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -92,5 +93,9 @@ class LoginViewModel extends BaseViewModel {
 
   void signup(BuildContext context) {
     navigateToView(const SignupView(), Routes.signupView);
+  }
+
+  void forgotpassword(BuildContext context) {
+    navigateToView(const ForgetpassView(), Routes.forgetpassView);
   }
 }

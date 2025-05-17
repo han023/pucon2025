@@ -1,9 +1,6 @@
 // fonts
-const String poppins = 'poppins';
+const String sourceserif = 'sourceserif';
 const String roboto = 'roboto';
-const String montserrat = 'montserrat';
-const String birthstone = 'birthstone';
-const String nunito = 'nunito';
 
 // images
 const mainpage = 'assets/splashlogo.jpg';

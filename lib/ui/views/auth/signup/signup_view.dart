@@ -30,7 +30,6 @@ class SignupView extends StackedView<SignupViewModel> {
               children: [
                 text_helper(
                   data: "Let's Find A Doctor",
-                  font: montserrat,
                   fontWeight: FontWeight.bold,
                   size: fontSize20,
                 ).animate(delay: 500.ms).fade().moveY(begin: 100, end: 0),
@@ -39,7 +38,6 @@ class SignupView extends StackedView<SignupViewModel> {
                         children: [
                           text_helper(
                             data: "Verify Email",
-                            font: montserrat,
                             color: isDarkMode(context) ? grey : darkGrey,
                           )
                               .animate(delay: 300.ms)
@@ -48,7 +46,6 @@ class SignupView extends StackedView<SignupViewModel> {
                           text_helper(
                             data:
                                 "Please Verify your email and Login to continue",
-                            font: montserrat,
                             color: isDarkMode(context) ? grey : darkGrey,
                           )
                               .animate(delay: 500.ms)
@@ -60,7 +57,6 @@ class SignupView extends StackedView<SignupViewModel> {
                                   width: screenWidth(context),
                                   child: text_helper(
                                     data: "Click here to login",
-                                    font: nunito,
                                     fontWeight: FontWeight.bold,
                                     color: white,
                                     size: fontSize16,
@@ -74,7 +70,6 @@ class SignupView extends StackedView<SignupViewModel> {
                         children: [
                           text_helper(
                             data: "Sign up to continue",
-                            font: montserrat,
                             color: isDarkMode(context) ? grey : darkGrey,
                           )
                               .animate(delay: 700.ms)
@@ -148,10 +143,10 @@ class SignupView extends StackedView<SignupViewModel> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 text_helper(
-                                    data: "Select a Category", font: poppins),
+                                    data: "Select a Category"),
                                 DropdownButton<String>(
                                   hint: text_helper(
-                                      data: "Select a Category", font: poppins),
+                                      data: "Select a Category"),
                                   value: viewModel.cat,
                                   onChanged: (String? newValue) =>
                                       viewModel.updateCat(newValue!),
@@ -175,7 +170,6 @@ class SignupView extends StackedView<SignupViewModel> {
                                   width: screenWidth(context),
                                   child: text_helper(
                                     data: "Signup",
-                                    font: nunito,
                                     fontWeight: FontWeight.bold,
                                     color: white,
                                     size: fontSize16,
@@ -187,7 +181,7 @@ class SignupView extends StackedView<SignupViewModel> {
                                   onTap: () => viewModel.login(),
                                   child: text_helper(
                                       data: "Already Have Account",
-                                      font: montserrat))
+                                  ))
                               .animate(delay: 1700.ms)
                               .fade()
                               .moveY(begin: 100, end: 0),

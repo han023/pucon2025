@@ -27,6 +27,7 @@ class button_helper extends StatelessWidget {
       child: Container(
           width: width,
           margin: margin,
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: primary,

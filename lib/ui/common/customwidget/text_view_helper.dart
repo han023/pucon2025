@@ -11,7 +11,7 @@ class text_view_helper extends StatelessWidget {
     super.key,
     required this.hint,
     required this.controller,
-    this.textstyle = poppins,
+    this.textstyle = sourceserif,
     this.hintcol,
     this.textcolor,
     this.size = fontSize14,
@@ -48,13 +48,21 @@ class text_view_helper extends StatelessWidget {
         child: TextFormField(
           controller: controller,
           keyboardType: textInputType,
-          decoration: InputDecoration(
+            decoration: InputDecoration(
               counterText: "",
               hintStyle: text_helper.customstyle(
                   textstyle, hintcol, size, context, FontWeight.normal, null),
               hintText: hint,
               prefixIcon: prefix,
-              suffix: suffix),
+              suffixIcon: suffix,
+              border: const UnderlineInputBorder(),
+              focusedBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black), // Or any color you want
+              ),
+              enabledBorder: const UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.grey), // Light grey for idle
+              ),
+            ),
           inputFormatters: formatter,
           obscureText: obsecure,
           maxLines: maxline,

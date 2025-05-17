@@ -28,13 +28,11 @@ class ForgetpassView extends StackedView<ForgetpassViewModel> {
             children: [
               text_helper(
                 data: "Forget Password",
-                font: montserrat,
                 fontWeight: FontWeight.bold,
                 size: fontSize20,
               ).animate(delay: 500.ms).fade().moveY(begin: 100, end: 0),
               text_helper(
                 data: "Please enter email to recover your password.",
-                font: montserrat,
                 textAlign: TextAlign.start,
               ).animate(delay: 700.ms).fade().moveY(begin: 100, end: 0),
               verticalSpaceMedium,
@@ -42,7 +40,6 @@ class ForgetpassView extends StackedView<ForgetpassViewModel> {
                 alignment: Alignment.centerLeft,
                 child: text_helper(
                   data: "Email Address",
-                  font: montserrat,
                 ).animate(delay: 700.ms).fade().moveY(begin: 100, end: 0),
               ),
               text_view_helper(
@@ -56,7 +53,6 @@ class ForgetpassView extends StackedView<ForgetpassViewModel> {
                   width: screenWidth(context),
                   child: text_helper(
                     data: "Forget Password",
-                    font: nunito,
                     fontWeight: FontWeight.bold,
                     size: fontSize16,
                   )).animate(delay: 1500.ms).fade().moveY(begin: 100, end: 0),
@@ -69,12 +65,10 @@ class ForgetpassView extends StackedView<ForgetpassViewModel> {
                     children: [
                       text_helper(
                         data: "Back to ",
-                        font: poppins,
                         size: fontSize12,
                       ),
                       text_helper(
                           data: "Login",
-                          font: poppins,
                           color: primary,
                           size: fontSize12),
                     ],

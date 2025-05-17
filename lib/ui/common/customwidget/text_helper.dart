@@ -11,7 +11,7 @@ class text_helper extends StatelessWidget {
   text_helper(
       {super.key,
       required this.data,
-      required this.font,
+      this.font = roboto,
       this.color,
       this.size = fontSize14,
       this.fontWeight = FontWeight.normal,
@@ -43,8 +43,8 @@ class text_helper extends StatelessWidget {
       BuildContext context,
       FontWeight fontWeight,
       TextDecoration? textDecoration) {
-    if (font == poppins) {
-      return GoogleFonts.poppins(
+    if (font == sourceserif) {
+      return GoogleFonts.sourceSerif4(
           color: color,
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
@@ -55,20 +55,8 @@ class text_helper extends StatelessWidget {
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
           fontWeight: fontWeight);
-    } else if (font == nunito) {
-      return GoogleFonts.nunito(
-          color: color,
-          decoration: textDecoration,
-          fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
-          fontWeight: fontWeight);
-    } else if (font == birthstone) {
-      return GoogleFonts.birthstone(
-          color: color,
-          decoration: textDecoration,
-          fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
-          fontWeight: fontWeight);
-    } else {
-      return GoogleFonts.montserrat(
+    }  else {
+      return GoogleFonts.roboto(
           color: color,
           decoration: textDecoration,
           fontSize: getResponsiveFontSize(context, fontSize: size) * 3,
