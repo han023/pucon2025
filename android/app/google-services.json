@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856370151794",
+    "project_id": "pucon2025-bb8f0",
+    "storage_bucket": "pucon2025-bb8f0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856370151794:android:f7f779566f065f4dcb5deb",
+        "android_client_info": {
+          "package_name": "com.hansoft.pucon2025"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCesQVKeowkMwWPA-zt3p5V3i5ikHmk_9A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
