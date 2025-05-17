@@ -1,0 +1,2 @@
+D:/pucon2025/android/app/.cxx/Debug/4a5o6c12/x86/CMakeFiles/edit_cache.dir
+D:/pucon2025/android/app/.cxx/Debug/4a5o6c12/x86/CMakeFiles/rebuild_cache.dir

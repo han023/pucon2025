@@ -51,6 +51,12 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: SourceSerifPro
+      fonts:
+        - asset: assets/fonts/SourceSerifPro-Regular.otf
+          weight: 400
+
 
   assets:
     - assets/
