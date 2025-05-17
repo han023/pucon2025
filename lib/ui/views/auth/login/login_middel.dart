@@ -18,12 +18,12 @@ Widget loginMiddel(BuildContext context, LoginViewModel viewModel){
       child: ListView(
         children: [
           text_view_helper(
-            hint: "abc@gmail.com",
+            hint: "Email",
             controller: viewModel.email,
             prefix: const Icon(Icons.person),
           ).animate(delay: 700.ms).fade().moveY(begin: 100, end: 0),
           text_view_helper(
-            hint: "123@Abcd",
+            hint: "Password",
             controller: viewModel.password,
             obsecure: viewModel.obsure,
             maxline: 1,

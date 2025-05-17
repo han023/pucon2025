@@ -5,7 +5,7 @@
     "locator_name": "locator",
     "prefer_web": false,
     "register_mocks_function": "registerServices",
-    "services_path": "services/database",
+    "services_path": "services",
     "stacked_app_file_path": "app/app.dart",
     "test_helpers_file_path": "helpers/test_helpers.dart",
     "test_services_path": "services",

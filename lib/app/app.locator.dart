@@ -15,7 +15,6 @@ import '../services/auth_service.dart';
 import '../services/cloudinary_service.dart';
 import '../services/database/user_service.dart';
 import '../services/fcmnoification_service.dart';
-import '../services/gemini_service.dart';
 import '../services/localstorage_service.dart';
 
 final locator = StackedLocator.instance;
@@ -35,7 +34,6 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => LocalstorageService());
   locator.registerLazySingleton(() => FcmnoificationService());
   locator.registerLazySingleton(() => CloudinaryService());
-  locator.registerLazySingleton(() => GeminiService());
   locator.registerLazySingleton(() => AuthService());
   locator.registerLazySingleton(() => UserService());
 }

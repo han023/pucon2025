@@ -13,10 +13,10 @@ class SignupView extends StackedView<SignupViewModel> {
 
   @override
   Widget builder(
-      BuildContext context,
-      SignupViewModel viewModel,
-      Widget? child,
-      ) {
+    BuildContext context,
+    SignupViewModel viewModel,
+    Widget? child,
+  ) {
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -26,7 +26,8 @@ class SignupView extends StackedView<SignupViewModel> {
                 signupTop(context),
                 Expanded(
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.only(bottom: 100), // Padding to avoid overlapping
+                    padding: const EdgeInsets.only(
+                        bottom: 100), // Padding to avoid overlapping
                     child: Column(
                       children: [
                         viewModel.verify
@@ -39,7 +40,6 @@ class SignupView extends StackedView<SignupViewModel> {
                 ),
               ],
             ),
-            // This positions signupBottom at the bottom of the screen
             Positioned(
               bottom: 10,
               left: 0,

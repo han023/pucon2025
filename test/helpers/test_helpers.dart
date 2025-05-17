@@ -5,7 +5,6 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:pucon2025/services/localstorage_service.dart';
 import 'package:pucon2025/services/fcmnoification_service.dart';
 import 'package:pucon2025/services/cloudinary_service.dart';
-import 'package:pucon2025/services/gemini_service.dart';
 import 'package:pucon2025/services/auth_service.dart';
 import 'package:pucon2025/services/database/user_service.dart';
 // @stacked-import
@@ -108,12 +107,7 @@ MockCloudinaryService getAndRegisterCloudinaryService() {
   return service;
 }
 
-MockGeminiService getAndRegisterGeminiService() {
-  _removeRegistrationIfExists<GeminiService>();
-  final service = MockGeminiService();
-  locator.registerSingleton<GeminiService>(service);
-  return service;
-}
+
 
 MockAuthService getAndRegisterAuthService() {
   _removeRegistrationIfExists<AuthService>();

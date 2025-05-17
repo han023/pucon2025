@@ -6,7 +6,6 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:pucon2025/services/localstorage_service.dart';
 import 'package:pucon2025/services/fcmnoification_service.dart';
 import 'package:pucon2025/services/cloudinary_service.dart';
-import 'package:pucon2025/services/gemini_service.dart';
 import 'package:pucon2025/services/auth_service.dart';
 import 'package:pucon2025/services/database/user_service.dart';
 import 'package:pucon2025/ui/views/auth/login/login_view.dart';
@@ -31,7 +30,6 @@ import 'package:pucon2025/ui/views/home/home_view.dart';
     LazySingleton(classType: LocalstorageService),
     LazySingleton(classType: FcmnoificationService),
     LazySingleton(classType: CloudinaryService),
-    LazySingleton(classType: GeminiService),
     LazySingleton(classType: AuthService),
     LazySingleton(classType: UserService),
 // @stacked-service
