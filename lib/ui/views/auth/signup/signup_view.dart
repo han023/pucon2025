@@ -22,7 +22,11 @@ class SignupView extends StackedView<SignupViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: Icon(Icons.arrow_back_ios_new),
+          title: text_helper(data: "Forget Password"),
+          centerTitle: true,
+        ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(padding10),

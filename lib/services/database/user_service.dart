@@ -31,6 +31,15 @@ class UserService {
     await _firestore.add(data.toJson());
   }
 
+  Future<bool> findUser(String email) async {
+    final QuerySnapshot query =
+        await _firestore.where('email', isEqualTo: email).limit(1).get();
+    if (query.docs.isEmpty) {
+      return false;
+    }
+    return true;
+  }
+
   Future<void> updateNotificationId(String id) async {
     String? token = await _fcm.fcmToken();
     _localstorage.setString(notificatioid, token!);

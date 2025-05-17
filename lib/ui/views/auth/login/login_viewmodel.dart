@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pucon2025/ui/views/auth/forgetpass/forgetpass_view.dart';
+import 'package:pucon2025/ui/views/home/home_view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -62,26 +63,16 @@ class LoginViewModel extends BaseViewModel {
       }
 
       _localstorage.setString(uid, value.uid);
-      _localstorage.setString("cat", value.cat);
       _localstorage.setString(id, value.id);
       _localstorage.setString(auth, "true");
       _user.updateNotificationId(value.id);
 
-      // if (value.cat == "doctor") {
-      //   _navigationService.clearStackAndShow(Routes.doctorView);
-      //   _navigationService.replaceWithTransition(
-      //     const DoctorView(),
-      //     routeName: Routes.doctorView,
-      //     transitionStyle: Transition.rightToLeft,
-      //   );
-      // } else {
-      //   _navigationService.clearStackAndShow(Routes.userView);
-      //   _navigationService.replaceWithTransition(
-      //     const UserView(),
-      //     routeName: Routes.userView,
-      //     transitionStyle: Transition.rightToLeft,
-      //   );
-      // }
+      _navigationService.clearStackAndShow(Routes.homeView);
+      _navigationService.replaceWithTransition(
+        const HomeView(),
+        routeName: Routes.homeView,
+        transitionStyle: Transition.rightToLeft,
+      );
     } on FirebaseAuthException catch (e) {
       show_snackbar(context, e.message ?? "Authentication Error");
     } catch (e) {

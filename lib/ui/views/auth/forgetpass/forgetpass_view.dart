@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:pucon2025/ui/views/auth/forgetpass/forgot_email.dart';
 import 'package:stacked/stacked.dart';
 
 import '../../../common/constants/app_colors.dart';
@@ -20,59 +21,47 @@ class ForgetpassView extends StackedView<ForgetpassViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: InkWell(
+              onTap: () => viewModel.back(),
+              child: const Icon(
+                Icons.arrow_back_ios_new,
+                size: 25,
+              )),
+          title: text_helper(
+              data: "Forget Password",
+              font: sourceserif,
+              fontWeight: FontWeight.bold),
+          centerTitle: true,
+        ),
         body: SafeArea(
             child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               text_helper(
-                data: "Forget Password",
-                fontWeight: FontWeight.bold,
-                size: fontSize20,
+                data:
+                    "Enter your email and will send you\ninstruction on how to reset it",
+                font: sourceserif,
+                fontWeight: FontWeight.w500,
+                textAlign: TextAlign.center,
+                size: fontSize12,
               ).animate(delay: 500.ms).fade().moveY(begin: 100, end: 0),
-              text_helper(
-                data: "Please enter email to recover your password.",
-                textAlign: TextAlign.start,
-              ).animate(delay: 700.ms).fade().moveY(begin: 100, end: 0),
               verticalSpaceMedium,
-              Align(
-                alignment: Alignment.centerLeft,
-                child: text_helper(
-                  data: "Email Address",
-                ).animate(delay: 700.ms).fade().moveY(begin: 100, end: 0),
-              ),
-              text_view_helper(
-                hint: "abc@gmail.com",
-                controller: viewModel.email,
-                prefix: const Icon(Icons.mail_outline),
-              ).animate(delay: 900.ms).fade().moveY(begin: 100, end: 0),
+              forgotEmail(context, viewModel)
+                  .animate(delay: 700.ms)
+                  .fade()
+                  .moveY(begin: 100, end: 0),
               verticalSpaceSmall,
               button_helper(
                   onpress: () => viewModel.forgetpassword(context),
                   width: screenWidth(context),
                   child: text_helper(
-                    data: "Forget Password",
+                    data: "Send",
                     fontWeight: FontWeight.bold,
-                    size: fontSize16,
-                  )).animate(delay: 1500.ms).fade().moveY(begin: 100, end: 0),
-              verticalSpaceSmall,
-              InkWell(
-                  onTap: () => viewModel.login(context),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      text_helper(
-                        data: "Back to ",
-                        size: fontSize12,
-                      ),
-                      text_helper(
-                          data: "Login",
-                          color: primary,
-                          size: fontSize12),
-                    ],
-                  )).animate(delay: 1700.ms).fade().moveY(begin: 100, end: 0),
+                    color: white,
+                    font: sourceserif,
+                  )).animate(delay: 900.ms).fade().moveY(begin: 100, end: 0),
             ],
           ),
         )));
