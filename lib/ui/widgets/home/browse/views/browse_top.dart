@@ -38,7 +38,7 @@ Widget browseTop(BuildContext context, BrowseModel viewModel) {
           ),
         ),
         verticalSpaceSmall,
-        BrowseTopCategoryBar(context,viewModel),
+        BrowseTopCategoryBar(context, viewModel),
         verticalSpaceSmall,
         BrowseTopSlideShow(context),
       ],

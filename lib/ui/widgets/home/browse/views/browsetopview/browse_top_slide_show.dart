@@ -7,13 +7,11 @@ import 'package:pucon2025/ui/common/constants/ui_helpers.dart';
 import 'package:pucon2025/ui/common/customwidget/button_helper.dart';
 import 'package:pucon2025/ui/common/customwidget/text_helper.dart';
 
-
 final List<String> imgList = [
   'assets/login.png',
   'assets/login.png',
   'assets/login.png',
 ];
-
 
 Widget BrowseTopSlideShow(BuildContext context) {
   return CarouselSlider.builder(

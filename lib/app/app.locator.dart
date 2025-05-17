@@ -15,6 +15,7 @@ import '../services/auth_service.dart';
 import '../services/cloudinary_service.dart';
 import '../services/database/author_service.dart';
 import '../services/database/course_service.dart';
+import '../services/database/notification_service.dart';
 import '../services/database/user_service.dart';
 import '../services/fcmnoification_service.dart';
 import '../services/localstorage_service.dart';
@@ -40,4 +41,5 @@ Future<void> setupLocator({
   locator.registerLazySingleton(() => UserService());
   locator.registerLazySingleton(() => AuthorService());
   locator.registerLazySingleton(() => CourseService());
+  locator.registerLazySingleton(() => NotificationService());
 }

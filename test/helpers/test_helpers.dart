@@ -9,6 +9,7 @@ import 'package:pucon2025/services/auth_service.dart';
 import 'package:pucon2025/services/database/user_service.dart';
 import 'package:pucon2025/services/database/author_service.dart';
 import 'package:pucon2025/services/database/course_service.dart';
+import 'package:pucon2025/services/database/notification_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -25,6 +26,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<UserService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<AuthorService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<CourseService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<NotificationService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -39,6 +41,7 @@ void registerServices() {
   getAndRegisterUserService();
   getAndRegisterAuthorService();
   getAndRegisterCourseService();
+  getAndRegisterNotificationService();
 // @stacked-mock-register
 }
 
@@ -138,6 +141,13 @@ MockCourseService getAndRegisterCourseService() {
   _removeRegistrationIfExists<CourseService>();
   final service = MockCourseService();
   locator.registerSingleton<CourseService>(service);
+  return service;
+}
+
+MockNotificationService getAndRegisterNotificationService() {
+  _removeRegistrationIfExists<NotificationService>();
+  final service = MockNotificationService();
+  locator.registerSingleton<NotificationService>(service);
   return service;
 }
 // @stacked-mock-create

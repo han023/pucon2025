@@ -14,6 +14,7 @@ import 'package:pucon2025/ui/views/auth/forgetpass/forgetpass_view.dart';
 import 'package:pucon2025/ui/views/home/home_view.dart';
 import 'package:pucon2025/services/database/author_service.dart';
 import 'package:pucon2025/services/database/course_service.dart';
+import 'package:pucon2025/services/database/notification_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,6 +37,7 @@ import 'package:pucon2025/services/database/course_service.dart';
     LazySingleton(classType: UserService),
     LazySingleton(classType: AuthorService),
     LazySingleton(classType: CourseService),
+    LazySingleton(classType: NotificationService),
 // @stacked-service
   ],
   bottomsheets: [

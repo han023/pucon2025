@@ -26,7 +26,6 @@ class Browse extends StackedView<BrowseModel> {
               author(context, viewModel),
               verticalSpaceMedium,
               RecommendedCourse(context, viewModel),
-
             ],
           ),
         ),

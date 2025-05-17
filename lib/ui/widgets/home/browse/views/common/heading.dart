@@ -5,7 +5,7 @@ import '../../../../../common/constants/app_strings.dart';
 import '../../../../../common/constants/ui_helpers.dart';
 import '../../../../../common/customwidget/text_helper.dart';
 
-Widget HeadingBrowse(String title){
+Widget HeadingBrowse(String title) {
   return Column(
     children: [
       Row(
