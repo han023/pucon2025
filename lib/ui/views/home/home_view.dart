@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pucon2025/ui/common/constants/app_colors.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_viewmodel.dart';
@@ -13,9 +14,15 @@ class HomeView extends StackedView<HomeViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-        child: const Center(child: Text("HomeView")),
+      body: SafeArea(child: viewModel.pages[viewModel.currentIndex]),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: white,
+        unselectedItemColor: grey,
+        selectedItemColor: primary,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: viewModel.currentIndex,
+        onTap: (index) => viewModel.updateIndex(index),
+        items: viewModel.bttomBarItemList,
       ),
     );
   }
