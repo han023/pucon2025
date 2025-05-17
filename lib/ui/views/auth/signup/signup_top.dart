@@ -8,6 +8,12 @@ import '../../../common/customwidget/text_helper.dart';
 Widget signupTop(BuildContext context){
   return Stack(
     children: [
+      Image.asset(
+        'assets/signUp.png',
+        width: screenWidth(context),
+        height: 280,
+        fit: BoxFit.contain,
+      ),
       Container(
         width: screenWidth(context),
         height: 280,
