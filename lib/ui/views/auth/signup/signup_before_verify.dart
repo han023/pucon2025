@@ -66,7 +66,6 @@ Widget signupBeforeVerify(BuildContext context, SignupViewModel viewModel) {
           ],
         ),
         verticalSpaceMedium,
-        signupBottom(context, viewModel),
       ],
     ),
   );
